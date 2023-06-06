@@ -1,0 +1,11 @@
+
+main{
+    min-height: 80vh;
+}
+
+.product-title{
+    height: 2.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
