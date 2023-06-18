@@ -12,7 +12,21 @@ const authUser = asyncHandler(async (req, res) => {
     const user = await User.findOne({ email });
 
     if (user && (await user.matchPassword(password))) {
-        
+            
+            // //ajout
+            // const token = jwt.sign({ userId: user._id }, process.env.
+            //   JWT_SECRET, {
+            //     expiresIn: '30d' 
+            //   });
+
+            // //ajout
+            // res.cookie('jwt', token, {
+            //   httpOnly: true,
+            //   secure: process.env.NODE_ENV !== 'development',
+            //   sameSite: 'strict',
+            //   maxAge: 30 * 24 * 60 * 60 * 1000  //30 jours
+            // })
+      
         generateToken(res, user._id);
 
         res.status(200).json({
@@ -158,7 +172,7 @@ export{
     getUserProfile,
     updateUserProfile,
     getUsers,
-    deleteUser,
     getUserByID,
+    deleteUser,
     updateUser,
 };

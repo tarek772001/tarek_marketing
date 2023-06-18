@@ -13,7 +13,7 @@ connectDB();
 
 const app = express();
 
-//body parser moddleware
+//body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

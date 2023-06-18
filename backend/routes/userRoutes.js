@@ -16,7 +16,6 @@ import {
 
 import { protect, admin } from '../middleware/authMiddleware.js'
 
-//import { protect, admin } from '../middleware/authMiddleware.js'
 
 router
   .route('/')
@@ -27,7 +26,8 @@ router
   .post('/logout', logoutUser);
 
 router
-  .post('/login', authUser);
+  .post('/auth', authUser);
+  //.post('/login', authUser);
 
 router
   .route('/profile')
